@@ -1,0 +1,40 @@
+{
+  "name": "itech-mailbox-mobile",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {},
+  "proxies": [
+    {
+      "path": "/app/config/save",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/config/save"
+    },
+    {
+      "path": "/app/folder/list",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/folder/list"
+    },
+    {
+      "path": "/app/message/list",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/message/list"
+    },
+    {
+      "path": "/app/message/send",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/message/send"
+    },
+    {
+      "path": "/app/config/isDone",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/config/isDone"
+    },
+    {
+      "path": "/app/message/get",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/message/get"
+    },
+    {
+      "path": "/app/yuzhijia/email/get",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/yuzhijia/email/get"
+    },
+    {
+      "path": "/app/message/reply",
+      "proxyUrl": "http://itech.tpddns.cn:7474/project/app/message/reply"
+    }
+  ]
+}

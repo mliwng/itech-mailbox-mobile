@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>view</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <h2 class="line-limit-length">{{subject}}</h2>
+      <p class="line-limit-length"><span [hidden]="detailsHidden">发件人:</span>{{from}}</p>
+      <div [hidden]="detailsHidden">
+        <p class="line-limit-length"><span [hidden]="detailsHidden">收件人:</span>{{to}}</p>
+        <p class="line-limit-length">{{sendDate}}</p>
+      </div>
+      <button ion-button clear item-end (click)="onMoreClick()">{{detailsHidden?'更多':'收起'}}</button>
+    </ion-item>
+    <ion-item style="border-bottom-width: 0px">
+      <div [innerHTML]="receiveContent"></div>
+    </ion-item>
+  </ion-list>
+  <ion-footer>
+    <ion-toolbar>
+      <button start ion-button icon-only menuToggle (click)="onActionMoreClick()">更多</button>
+      <ion-segment>
+        <button ion-button icon-only menuToggle (click)="onActionReplyForwardClick()">回复/转发</button>
+      </ion-segment>
+      <button end ion-button icon-only menuToggle (click)="onActionShareClick()">分享</button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

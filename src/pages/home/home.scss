@@ -1,0 +1,59 @@
+page-home {
+
+}
+
+.line-limit-length {
+  overflow: hidden; /*内容超出后隐藏*/
+  text-overflow: ellipsis; /* 超出内容显示为省略号*/
+  white-space: nowrap; /*文本不进行换行*/
+}
+
+.content_status {
+  width: 20px;
+  vertical-align: top;
+}
+
+.content_date {
+  width: 90px;
+  vertical-align: top;
+  color: #888;
+  font-size: 15px;
+}
+
+.content_from {
+  font-size: 20px;
+}
+
+.content_subject {
+  font-size: 15px;
+}
+
+.content_plain {
+  color: #888;
+  font-size: 15px;
+}
+
+.iconsolo.iconsolo-unread {
+  background: url('../../assets/imgs/mail.png') -48px 0 no-repeat;
+  height: 16px;
+}
+
+.iconsolo.iconsolo-flag {
+  background: url('../../assets/imgs/mail.png') 0 0 no-repeat;
+  height: 16px;
+}
+
+.iconsolo.iconsolo-unread-flag {
+  background: url('../../assets/imgs/mail.png') -32px 0 no-repeat;
+  height: 16px;
+}
+
+.iconsolo {
+  height: 16px;
+  width: 16px;
+  -webkit-background-size: 64px 16px !important;
+  -moz-background-size: 64px 16px !important;
+  background-size: 64px 16px !important;
+  display: inline-block;
+  vertical-align: middle;
+}

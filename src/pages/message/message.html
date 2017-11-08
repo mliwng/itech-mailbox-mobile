@@ -1,0 +1,68 @@
+<!--
+  Generated template for the MessagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>message</ion-title>
+    <ion-buttons end>
+      <button ion-button [(disabled)]="is_send_disabled" (click)="send()">发送</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="messageForm">
+    <ion-fab middle right>
+      <button ion-fab mini>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-fab>
+    <ion-list>
+      <ion-item>
+        <ion-label class="ion-label-custom">收件人</ion-label>
+        <div item-content>
+          <ion-tags-input formControlName="to" [(ngModel)]="to" [verifyMethod]="verifyToTag"
+                          (onChange)="validateMessageForm()">
+          </ion-tags-input>
+        </div>
+        <div item-end>
+          <button class="bar-button bar-button-ios bar-button-default bar-button-default-ios" ion-button
+                  icon-only (click)="onAddToPersons()">
+            <ion-icon ios="ios-add-circle-outline" md="md-add-circle-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label-custom">抄送</ion-label>
+        <div item-content>
+          <ion-tags-input formControlName="cc" [(ngModel)]="cc" [verifyMethod]="verifyCcTag"
+                          (onChange)="validateMessageForm()">
+          </ion-tags-input>
+        </div>
+        <div item-end>
+          <button class="bar-button bar-button-ios bar-button-default bar-button-default-ios" ion-button
+                  icon-only (click)="onAddCcPersons()">
+            <ion-icon ios="ios-add-circle-outline" md="md-add-circle-outline"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label class="ion-label-custom">主题</ion-label>
+        <div item-content>
+          <ion-input formControlName="subject" (keyup)="validateMessageForm()"></ion-input>
+        </div>
+      </ion-item>
+      <ion-item style="border-bottom-width: 0px">
+        <ion-textarea formControlName="content" rows="5" (keyup)="validateMessageForm()"></ion-textarea>
+      </ion-item>
+      <ion-item style="border-bottom-width: 0px">
+        <div [innerHTML]="receiveContent"></div>
+      </ion-item>
+    </ion-list>
+
+  </form>
+
+</ion-content>

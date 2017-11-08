@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ConfigPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>邮箱服务器配置</ion-title>
+    <ion-buttons end>
+      <button ion-button [(disabled)]="is_save_config_disabled" (click)="saveConfig()">保存</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-segment color="primary" [(ngModel)]="tab">
+    <ion-segment-button value="IMAP">IMAP</ion-segment-button>
+    <ion-segment-button value="SMTP">SMTP</ion-segment-button>
+  </ion-segment>
+  <form [formGroup]="configForm" [ngSwitch]="tab" style="margin-top:15px">
+    <ion-list *ngSwitchCase="'IMAP'">
+      <ion-item>
+        <ion-label fixed>主机</ion-label>
+        <ion-input type="text" placeholder="imap.host.com" formControlName="imap_host" value="imap.aliyun.com"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>账号</ion-label>
+        <ion-input type="text" placeholder="example@host.com" formControlName="imap_account"
+                   value="yuqing_chi@aliyun.com"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>密码</ion-label>
+        <ion-input type="password" placeholder="请输入密码" formControlName="imap_password" value="mliwng123"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'SMTP'">
+      <ion-item>
+        <ion-label fixed>主机</ion-label>
+        <ion-input type="text" placeholder="smtp.host.com" formControlName="smtp_host" value="smtp.aliyun.com"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>账号</ion-label>
+        <ion-input type="text" placeholder="example@host.com" formControlName="smtp_account"
+                   value="yuqing_chi@aliyun.com"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>密码</ion-label>
+        <ion-input type="password" placeholder="请输入密码" formControlName="smtp_password" value="mliwng123"
+                   (keyup)="validateConfigForm()"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
